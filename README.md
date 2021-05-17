@@ -17,4 +17,4 @@ to
 [[ $CONFIG_FILE =~ ^[a-zA-Z0-9_=+.-]{1,15}$ ]] && CONFIG_FILE="/rw/usrlocal/etc/wireguard/$CONFIG_FILE.conf"
 
 
-this will allow you to store any sets of wireguard configs in any appVM /rw folder
+the only reason for this, is so that if you have to for any reason, you can run wg-quick up mullvad-??* or wg-quick down mullvad=??* and it will work without the entire path.  The rc.local change will work on qube start regardless as will the change.sh (can be run from any directory with sudo)
