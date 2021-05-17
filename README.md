@@ -3,10 +3,10 @@ Simple script I use to select a random wireguard conf and connect to it when sta
 
 I'm a totally new member of github, and very enthuastic about qubes, linux in general and network security.  This code is by no means finished, as I'm sure some of it can be achieved in a more unified way.
 
-One very nice thing about it is that it works in disposable vm's, so if an appVM has been set up with, for example an arkenfox configured firefox, and then been set to be its own DVM, it will connect to a different wireguard connection on every instance.
+One very nice thing about it is that it works in disposable vm's, so if an appVM has been set up with, for example an arkenfox configured firefox, with favourites, plugins etc, and then been set to be its own DVM, it will connect to a different wireguard connection on every instance and completely erased afterwards.  They can also be used as proxy appVM's for any qube if not ran as DVM.
 
 Pre-requisites:
-must download wireguard configuration files from mullvad of countries you wish to connect to (or ideally, ALL of their wireguard confs in one zip - then remove any that are not wanted) and extract them to /rw/usrconfig/etc/wireguard.  I do chmod 640 ./wireguard after this.
+must download wireguard configuration files from mullvad of countries you wish to connect to (or ideally, ALL of their wireguard confs in one zip - then remove any that are not wanted) and extract them to /rw/usrconfig/etc/wireguard.  I do chmod 640 ./wireguard after this.  Then append the 4 lines in rc.local to /rw/config/rc.local.
 
 You then need to edit the wg-quick (in fedora templateVM [ sudo nano /usr/bin/wg-quick ] asssuming that this template is where you installed wireguard-tools and change the line in the "parse_options()" function:
 
