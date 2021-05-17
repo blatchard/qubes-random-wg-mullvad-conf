@@ -1,0 +1,6 @@
+##append to /rw/config/rc.local in the same appVM that you have stored wg confs to /rw/usrlocal/etc/wireguard :
+
+STR="/rw/usrlocal/etc/wireguard/"
+mullvconfs=($STR"mullvad-"*)
+echo ${#mullvconfs[@]}
+wg-quick up ${mullvconfs[RANDOM%${#mullvconfs[@]}]};
